@@ -1,10 +1,11 @@
-import React from 'react'
+import React from 'react';
+import Layout from '../components/layout/Layout';
 
 const Top = () => {
   return (
-    <div>
-      top page
-    </div>
+    <Layout>
+       top page
+    </Layout>
   )
 }
 
