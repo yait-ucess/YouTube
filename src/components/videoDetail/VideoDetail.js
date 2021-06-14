@@ -11,7 +11,7 @@ export const VideoDetail = () => {
   const location = useLocation();
   const setSelectedVideo = async () => {
     const searchParams = new URLSearchParams(location.search);
-    const id = searchParams.get('');
+    const id = searchParams.get('v');
     await fetchSelectedData(id).then((res) => {
       const item = res.data.items.shift();
       setGlobalState({ type: 'SET_SELECTED', payload: {selected: item} });
@@ -19,7 +19,8 @@ export const VideoDetail = () => {
   }
   useEffect(() => {
     setSelectedVideo();
-  }, [])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [location.search])
   return globalState.selected && globalState.selected.id ? (
     <div className={Style.wrap}>
       <VideoPlay id={globalState.selected.id} />
