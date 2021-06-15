@@ -4,7 +4,7 @@ import Style from './SideListItem.module.scss';
 
 const SideListItem = ({id, src, title}) => {
   return (
-    <Link className={Style.item} to={{pathname: 'watch', search: `?v=${id}`}}>
+    <Link to={{pathname: 'watch', search: `?v=${id}`}} className={Style.item} >
       <img src={src} alt={title} />
       <div className={Style.info}>
         <span>{title}</span>
